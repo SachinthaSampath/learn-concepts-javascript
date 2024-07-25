@@ -53,9 +53,8 @@ var add = require(‘./add’);
 
 If you have written code on NodeJS, this syntax may look familiar. That’s because NodeJS implemented CommonJS style module API.
 
-
-
 # Asynchronous Module Definition(AMD)
+
 The problem with CommonJs style module definition is that it is synchronous. When you call ‘var add=require(‘add’);’, the system will be on halt until the module is ready. This mean this line of code will freeze the browser while all the modules are being loaded. So this may not be the best way to define modules for browser side application.
 
 To transfer module syntax from server usage to browser usage, CommonJS proposed several module formats, “Module/Transfer”. One of the proposals, “Module/Transfer/C” later become Asynchronous Module Definition (AMD).
@@ -68,14 +67,19 @@ define([‘add’, ‘reduce’], function(add, reduce){
 
 - The define function(or keyword) takes list of dependencies and a callback function as arguments. The arguments for the callback function will be the same order of dependencies in the array. This is equivalent to importing modules. And the callback function returns a value, which is the value you export.
 
+### RequireJS
 
+- AMD can save us from the hell of script tags and global pollution in our browser application. Then, how can I use it? RequireJS is here to help us. RequireJS is a JavaScript module loader. It helps load modules asynchronously as needed.
+
+- Despite its name, its goal is not to support CommonJS ‘require’ syntax. With RequireJS, you can write AMD style module.
+
+- Before you write your own application, you will have to download ‘require.js’ file from RequireJS website.
 
 RequireJS and AMD solve all the problems we had before. However, it creates other slightly less serious problems.
 
 - AMD syntax is too verbose. Since everything is wrapped in ‘define’ function, there are extra indentation for our code. With a small files, it is not much problem, but for a large code base, it can be mentally taxing.
 - List of dependencies in the array must match the list of arguments in the function. If there are many dependencies, it can be hard to maintain the order of the dependencies. If you have dozens of dependencies in your module, and later if you had to remove one in the middle, it can be difficult to find matching module and argument.
 - With current browsers(HTTP 1.1), loading many small files can degrade the performance.
-
 
 ## A History of JavaScript Modules and Bundling, For the Post-ES6 Developer
 
