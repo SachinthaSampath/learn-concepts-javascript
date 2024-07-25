@@ -1,8 +1,4 @@
-// add.js
-define([], function () {
-    var add = function (a, b) {
-        return a + b;
-    };
-
-    return add;
-});
+//add.js
+module.exports = function add(a,b){
+    return a + b;
+};
