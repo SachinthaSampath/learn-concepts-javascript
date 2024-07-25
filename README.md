@@ -9,6 +9,16 @@ This is very good way to get started. There is no external files or dependency t
 
 
 
+# Script tags
+This is natural transition from inline scripting. Now we divide the big chunk of JavaScript into smaller pieces and load them using <script src=”…”></script> tags.
+
+By separating files into multiple JavaScript files, we can reuse the code. We no longer need to copy and paste code between different html pages. We simply need to include the file with script tags. Although this is better approach, this still has following problems.
+
+- Lack of Dependency Resolution: The order of the files are important. You are responsible for including add.js, reduce.js and sum.js files before main.js file.
+- Pollution of global namespace: All the functions and variables are still in global scope.
+
+
+
 ## A History of JavaScript Modules and Bundling, For the Post-ES6 Developer
 [https://8thlight.com/insights/a-history-of-javascript-modules-and-bundling-for-the-post-es6-developer](https://8thlight.com/insights/a-history-of-javascript-modules-and-bundling-for-the-post-es6-developer)
 
