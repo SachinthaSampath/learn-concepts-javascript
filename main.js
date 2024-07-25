@@ -1,8 +1,6 @@
-// var add = require('./add');
-
-// console.log(add(10, 20))
-
-const { add, subtract } = require('./add');
-
-console.log(add(10, 20));
-console.log(subtract(20, 10));
+// main.js
+define(['sum'], function (sum) {
+    var values = [1, 2, 4, 5, 6, 7, 8, 9];
+    var answer = sum(values)
+    document.getElementById("answer").innerHTML = answer;
+})
