@@ -17,7 +17,17 @@ By separating files into multiple JavaScript files, we can reuse the code. We no
 - Lack of Dependency Resolution: The order of the files are important. You are responsible for including add.js, reduce.js and sum.js files before main.js file.
 - Pollution of global namespace: All the functions and variables are still in global scope.
 
+# Module Object and IIFE(Module Pattern)
 
+Module Object and IIFE(Module Pattern)
+By using module object and Immediately-invoked function expression(IIFE), we can reduce global scope pollution. In this approach, we expose only one object to global scope. The single object contains all the methods and values we need in our application. In this example, we expose only myApp object to global scope. All the functions will be held onto myApp object.
+
+This is huge improvement compared to previous example. And most of popular JavaScript libraries such as jQuery use this pattern. It exposes one global object, $, and all the functions are under $ object.
+
+Yet, this is not a perfect solution. This approach still suffers from the same problem as previous section.
+
+- Lack of Dependency Resolution: The order of the files are still important. myApp.js file must come before any other files. And main.js file must come after all other library files.
+- Pollution of global namespace: Number of global variable is now 1, but is not zero yet
 
 ## A History of JavaScript Modules and Bundling, For the Post-ES6 Developer
 [https://8thlight.com/insights/a-history-of-javascript-modules-and-bundling-for-the-post-es6-developer](https://8thlight.com/insights/a-history-of-javascript-modules-and-bundling-for-the-post-es6-developer)

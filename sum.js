@@ -1,4 +1,5 @@
-//sum.js
-function sum(arr) {
-    return reduce(arr, add);
-}
+(function () {
+    myApp.sum = function (arr) {
+        return myApp.reduce(arr, myUtil.add);
+    }
+})();
