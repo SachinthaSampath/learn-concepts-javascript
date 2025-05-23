@@ -1,0 +1,2 @@
+ 
+calorieTracker.trackCalories(100);
